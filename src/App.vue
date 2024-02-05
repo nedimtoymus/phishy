@@ -1,27 +1,24 @@
 <template>
- <div>
-<LoginPage />
- </div>
+  <div id="app">
+    <nav v-if="!hideNavigation">
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/register">Register</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import LoginPage from './components/LoginPage.vue';
-
 export default {
   name: 'App',
-  components: {
-    LoginPage
+  computed: {
+    hideNavigation() {
+      return this.$route.meta.hideNavigation;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* Stil bilgileriniz */
 </style>

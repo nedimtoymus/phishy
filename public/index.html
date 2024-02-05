@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+   
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <link href="<%=BASE_URL %>media/svg/social-logos" 
-    rel="icon"
-    
-    />
+    <link 
+    href="<%= BASE_URL %>media/>" 
+    rel="media" 
+    type="text/media" />
+
+   
+   
     <link
     href="<%= BASE_URL %>plugins/global/plugins.bundle.css"
     rel="stylesheet"
@@ -21,11 +25,27 @@
     rel="stylesheet"
     type="text/css"
   />
+
+  <link href="<%= BASE_URL %>js" 
+  rel="JavaScript"
+  type="text/javascript"
+  />
   </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+  <body
+   
+   id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default"
+    >
+    
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>

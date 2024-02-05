@@ -1,7 +1,6 @@
 <template>
-  <div>
-	<div class="d-flex flex-column flex-root" id="kt_app_root">
-			<!--begin::Authentication - Sign-in -->
+ <div class="d-flex flex-column flex-root" id="kt_app_root">
+			<!--begin::Authentication - Sign-up -->
 			<div class="d-flex flex-column flex-lg-row flex-column-fluid">
 				<!--begin::Body-->
 				<div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
@@ -10,11 +9,11 @@
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10">
 							<!--begin::Form-->
-							<form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo1/dist/index.html" action="#">
+							<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="../../demo1/dist/authentication/layouts/corporate/sign-in.html" action="#">
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
-									<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+									<h1 class="text-dark fw-bolder mb-3">Sign Up</h1>
 									<!--end::Title-->
 									<!--begin::Subtitle-->
 									<div class="text-gray-500 fw-semibold fs-6">Your Social Campaigns</div>
@@ -27,7 +26,7 @@
 									<div class="col-md-6">
 										<!--begin::Google link=-->
 										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="media/svg/brand-logos/google-icon.svg" class="h-15px me-3">Sign in with Google</a>
+										<img alt="Logo" src="media/svg/brand-logos/google-icon.svg" class="h-15px me-3" />Sign in with Google</a>
 										<!--end::Google link=-->
 									</div>
 									<!--end::Col-->
@@ -35,8 +34,8 @@
 									<div class="col-md-6">
 										<!--begin::Google link=-->
 										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3">
-										<img alt="Logo" src="media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3">Sign in with Apple</a>
+										<img alt="Logo" src="media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3" />
+										<img alt="Logo" src="media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3" />Sign in with Apple</a>
 										<!--end::Google link=-->
 									</div>
 									<!--end::Col-->
@@ -48,31 +47,60 @@
 								</div>
 								<!--end::Separator-->
 								<!--begin::Input group=-->
-								<div class="fv-row mb-8 fv-plugins-icon-container">
+								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent">
+									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
 									<!--end::Email-->
-								<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
-								<!--end::Input group=-->
-								<div class="fv-row mb-3 fv-plugins-icon-container">
-									<!--begin::Password-->
-									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent">
-									<!--end::Password-->
-								<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
-								<!--end::Input group=-->
-								<!--begin::Wrapper-->
-								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-									<div></div>
-									<!--begin::Link-->
-									<a href="../../demo1/dist/authentication/layouts/corporate/reset-password.html" class="link-primary">Forgot Password ?</a>
-									<!--end::Link-->
 								</div>
-								<!--end::Wrapper-->
+								<!--begin::Input group-->
+								<div class="fv-row mb-8" data-kt-password-meter="true">
+									<!--begin::Wrapper-->
+									<div class="mb-1">
+										<!--begin::Input wrapper-->
+										<div class="position-relative mb-3">
+											<input class="form-control bg-transparent" type="password" placeholder="Password" name="password" autocomplete="off" />
+											<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+												<i class="ki-duotone ki-eye-slash fs-2"></i>
+												<i class="ki-duotone ki-eye fs-2 d-none"></i>
+											</span>
+										</div>
+										<!--end::Input wrapper-->
+										<!--begin::Meter-->
+										<div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+											<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+										</div>
+										<!--end::Meter-->
+									</div>
+									<!--end::Wrapper-->
+									<!--begin::Hint-->
+									<div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+									<!--end::Hint-->
+								</div>
+								<!--end::Input group=-->
+								<!--end::Input group=-->
+								<div class="fv-row mb-8">
+									<!--begin::Repeat Password-->
+									<input placeholder="Repeat Password" name="confirm-password" type="password" autocomplete="off" class="form-control bg-transparent" />
+									<!--end::Repeat Password-->
+								</div>
+								<!--end::Input group=-->
+								<!--begin::Accept-->
+								<div class="fv-row mb-8">
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox" name="toc" value="1" />
+										<span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">I Accept the
+										<a href="#" class="ms-1 link-primary">Terms</a></span>
+									</label>
+								</div>
+								<!--end::Accept-->
 								<!--begin::Submit button-->
 								<div class="d-grid mb-10">
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+									<button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
 										<!--begin::Indicator label-->
-										<span class="indicator-label">Sign In</span>
+										<span class="indicator-label">Sign up</span>
 										<!--end::Indicator label-->
 										<!--begin::Indicator progress-->
 										<span class="indicator-progress">Please wait...
@@ -82,8 +110,8 @@
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet?
-								<a href="../../demo1/dist/authentication/layouts/corporate/sign-up.html" class="link-primary">Sign up</a></div>
+								<div class="text-gray-500 text-center fw-semibold fs-6">Already have an Account?
+								<a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html" class="link-primary fw-semibold">Sign in</a></div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->
@@ -97,7 +125,7 @@
 						<div class="me-10">
 							<!--begin::Toggle-->
 							<button class="btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-offset="0px, 0px">
-								<img data-kt-element="current-lang-flag" class="w-20px h-20px rounded me-3" src="media/flags/united-states.svg" alt="">
+								<img data-kt-element="current-lang-flag" class="w-20px h-20px rounded me-3" src="media/flags/united-states.svg" alt="" />
 								<span data-kt-element="current-lang-name" class="me-1">English</span>
 								<span class="d-flex flex-center rotate-180">
 									<i class="ki-duotone ki-down fs-5 text-muted m-0"></i>
@@ -110,7 +138,7 @@
 								<div class="menu-item px-3">
 									<a href="#" class="menu-link d-flex px-5" data-kt-lang="English">
 										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/united-states.svg" alt="">
+											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/united-states.svg" alt="" />
 										</span>
 										<span data-kt-element="lang-name">English</span>
 									</a>
@@ -120,7 +148,7 @@
 								<div class="menu-item px-3">
 									<a href="#" class="menu-link d-flex px-5" data-kt-lang="Spanish">
 										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/spain.svg" alt="">
+											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/spain.svg" alt="" />
 										</span>
 										<span data-kt-element="lang-name">Spanish</span>
 									</a>
@@ -130,7 +158,7 @@
 								<div class="menu-item px-3">
 									<a href="#" class="menu-link d-flex px-5" data-kt-lang="German">
 										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/germany.svg" alt="">
+											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/germany.svg" alt="" />
 										</span>
 										<span data-kt-element="lang-name">German</span>
 									</a>
@@ -140,7 +168,7 @@
 								<div class="menu-item px-3">
 									<a href="#" class="menu-link d-flex px-5" data-kt-lang="Japanese">
 										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/japan.svg" alt="">
+											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/japan.svg" alt="" />
 										</span>
 										<span data-kt-element="lang-name">Japanese</span>
 									</a>
@@ -150,7 +178,7 @@
 								<div class="menu-item px-3">
 									<a href="#" class="menu-link d-flex px-5" data-kt-lang="French">
 										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/france.svg" alt="">
+											<img data-kt-element="lang-flag" class="rounded-1" src="media/flags/france.svg" alt="" />
 										</span>
 										<span data-kt-element="lang-name">French</span>
 									</a>
@@ -177,11 +205,11 @@
 					<div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
 						<!--begin::Logo-->
 						<a href="../../demo1/dist/index.html" class="mb-0 mb-lg-12">
-							<img alt="Logo" src="media/logos/phishy1.png" class="h-50px h-m-75px">
+							<img alt="Logo" src="media/logos/custom-1.png" class="h-60px h-lg-75px" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Image-->
-						<img class="d-none d-lg-block mx-auto w-275px w-md-50 w-xl-500px mb-10 mb-lg-20" src="media/misc/auth-screens.png" alt="">
+						<img class="d-none d-lg-block mx-auto w-275px w-md-50 w-xl-500px mb-10 mb-lg-20" src="media/misc/auth-screens.png" alt="" />
 						<!--end::Image-->
 						<!--begin::Title-->
 						<h1 class="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">Fast, Efficient and Productive</h1>
@@ -189,27 +217,22 @@
 						<!--begin::Text-->
 						<div class="d-none d-lg-block text-white fs-base text-center">In this kind of post,
 						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">the blogger</a>introduces a person they’ve interviewed
-						<br>and provides some background information about
+						<br />and provides some background information about
 						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">the interviewee</a>and their
-						<br>work following this is a transcript of the interview.</div>
+						<br />work following this is a transcript of the interview.</div>
 						<!--end::Text-->
 					</div>
 					<!--end::Content-->
 				</div>
 				<!--end::Aside-->
 			</div>
-			<!--end::Authentication - Sign-in-->
+			<!--end::Authentication - Sign-up-->
 		</div>
-  </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    redirectToSignUp() {
-      this.$router.push('/register');
-    }
-  }
+
 }
 </script>
 
